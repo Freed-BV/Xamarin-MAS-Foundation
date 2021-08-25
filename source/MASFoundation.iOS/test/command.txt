@@ -1,0 +1,1 @@
+sharpie bind --output=test -framework ./MASFoundation.framework --namespace=MASFoundation --sdk=iphoneos14.4
