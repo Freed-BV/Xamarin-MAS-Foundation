@@ -85,8 +85,11 @@
     <EmbeddedReferenceJar Include="Jars\json-smart-2.3.jar" />
     <EmbeddedReferenceJar Include="Jars\nimbus-jose-jwt-6.0.2.jar" />
   </ItemGroup>
-  <ItemGroup>
-    <LibraryProjectZip Include="Jars\mas-foundation-release.aar" />
-  </ItemGroup>
+<!--  <ItemGroup>-->
+<!--    <LibraryProjectZip Include="Jars\mas-foundation-release.aar" />-->
+<!--  </ItemGroup>-->
+    <ItemGroup>
+      <LibraryProjectZip Include="Jars\mas-foundation-2.1.00-39.aar" />
+    </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.Bindings.targets" />
 </Project>
