@@ -55,6 +55,7 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Additions\LocalStoreDataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Additions\MAS.cs" />
     <Compile Include="Additions\MASUser.cs" />

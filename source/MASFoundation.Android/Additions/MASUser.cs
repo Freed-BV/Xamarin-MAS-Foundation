@@ -43,6 +43,19 @@ namespace Com.CA.Mas.Foundation
 
             return tcs.Task;
         }
+        
+        /// <summary>
+        /// Authenticates a user with an authorization code.
+        /// </summary>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Task<MASUser> LoginAsync(MASAuthorizationResponse response)
+        {
+            var tcs = new TaskCompletionSource<MASUser>();
+            Login(response, new MASCompletion<MASUser>(tcs));
+
+            return tcs.Task;
+        }
 
         /// <summary>
         /// Logs off an already authenticated user via an asynchronous request.

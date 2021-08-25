@@ -254,14 +254,14 @@ namespace MASFoundation
         [Field("MASUserDidUpdateInformationNotification", "__Internal")]
         NSString MASUserDidUpdateInformationNotification { get; }
 
-        //// Authorization Response - Social Login Notifications
-        //// extern NSString* const _Nonnull MASAuthorizationResponseDidReceiveAuthorizationCodeNotification;
-        //[Field("MASAuthorizationResponseDidReceiveAuthorizationCodeNotification", "__Internal")]
-        //NSString MASAuthorizationResponseDidReceiveAuthorizationCodeNotification { get; }
+        // Authorization Response - Social Login Notifications
+        // extern NSString* const _Nonnull MASAuthorizationResponseDidReceiveAuthorizationCodeNotification;
+        [Field("MASAuthorizationResponseDidReceiveAuthorizationCodeNotification", "__Internal")]
+        NSString MASAuthorizationResponseDidReceiveAuthorizationCodeNotification { get; }
 
-        //// extern NSString* const _Nonnull MASAuthorizationResponseDidReceiveErrorNotification;
-        //[Field("MASAuthorizationResponseDidReceiveErrorNotification", "__Internal")]
-        //NSString MASAuthorizationResponseDidReceiveErrorNotification { get; }
+        // extern NSString* const _Nonnull MASAuthorizationResponseDidReceiveErrorNotification;
+        [Field("MASAuthorizationResponseDidReceiveErrorNotification", "__Internal")]
+        NSString MASAuthorizationResponseDidReceiveErrorNotification { get; }
 
         //// Proximity Login Notifications
         //// extern NSString* const _Nonnull MASDeviceDidReceiveAuthorizationCodeFromProximityLoginNotification;
@@ -688,49 +688,49 @@ namespace MASFoundation
     //    MASAuthenticationProvider RetrieveAuthenticationProviderForProximityLogin { get; }
     //}
 
-    //// @protocol MASAuthorizationResponseDelegate <NSObject>
-    ////[Protocol, Model]
-    //[BaseType(typeof(NSObject))]
-    //[Model]
-    //interface MASAuthorizationResponseDelegate
-    //{
-    //    // @required -(void)didReceiveAuthorizationCode:(NSString * _Nonnull)code;
-    //    [Abstract]
-    //    [Export("didReceiveAuthorizationCode:")]
-    //    void DidReceiveAuthorizationCode(string code);
+    // @protocol MASAuthorizationResponseDelegate <NSObject>
+    //[Protocol, Model]
+    [BaseType(typeof(NSObject))]
+    [Model]
+    interface MASAuthorizationResponseDelegate
+    {
+        // @required -(void)didReceiveAuthorizationCode:(NSString * _Nonnull)code;
+        [Abstract]
+        [Export("didReceiveAuthorizationCode:")]
+        void DidReceiveAuthorizationCode(string code);
 
-    //    // @required -(void)didReceiveError:(NSError * _Nonnull)error;
-    //    [Abstract]
-    //    [Export("didReceiveError:")]
-    //    void DidReceiveError(NSError error);
-    //}
+        // @required -(void)didReceiveError:(NSError * _Nonnull)error;
+        [Abstract]
+        [Export("didReceiveError:")]
+        void DidReceiveError(NSError error);
+    }
 
-    //// @interface MASAuthorizationResponse : NSObject
-    //[BaseType(typeof(NSObject))]
-    //interface MASAuthorizationResponse
-    //{
-    //    [Wrap("WeakDelegate")]
-    //    [NullAllowed]
-    //    MASAuthorizationResponseDelegate Delegate { get; set; }
+    // @interface MASAuthorizationResponse : NSObject
+    [BaseType(typeof(NSObject))]
+    interface MASAuthorizationResponse
+    {
+        [Wrap("WeakDelegate")]
+        [NullAllowed]
+        MASAuthorizationResponseDelegate Delegate { get; set; }
 
-    //    // @property (nonatomic, weak) id<MASAuthorizationResponseDelegate> _Nullable delegate;
-    //    [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
-    //    NSObject WeakDelegate { get; set; }
+        // @property (nonatomic, weak) id<MASAuthorizationResponseDelegate> _Nullable delegate;
+        [NullAllowed, Export("delegate", ArgumentSemantic.Weak)]
+        NSObject WeakDelegate { get; set; }
 
-    //    // +(instancetype _Nullable)sharedInstance;
-    //    [Static]
-    //    [Export("sharedInstance")]
-    //    [return: NullAllowed]
-    //    MASAuthorizationResponse SharedInstance();
+        // +(instancetype _Nullable)sharedInstance;
+        [Static]
+        [Export("sharedInstance")]
+        [return: NullAllowed]
+        MASAuthorizationResponse SharedInstance();
 
-    //    // -(BOOL)application:(UIApplication * _Nonnull)app openURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> * _Nonnull)options;
-    //    [Export("application:openURL:options:")]
-    //    bool Application(UIApplication app, NSUrl url, NSDictionary<NSString, NSObject> options);
+        // -(BOOL)application:(UIApplication * _Nonnull)app openURL:(NSURL * _Nonnull)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> * _Nonnull)options;
+        [Export("application:openURL:options:")]
+        bool Application(UIApplication app, NSUrl url, NSDictionary options);
 
-    //    // -(BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nonnull)sourceApplication annotation:(id _Nonnull)annotation;
-    //    [Export("application:openURL:sourceApplication:annotation:")]
-    //    bool Application(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation);
-    //}
+        // -(BOOL)application:(UIApplication * _Nonnull)application openURL:(NSURL * _Nonnull)url sourceApplication:(NSString * _Nonnull)sourceApplication annotation:(id _Nonnull)annotation;
+        [Export("application:openURL:sourceApplication:annotation:")]
+        bool Application(UIApplication application, NSUrl url, string sourceApplication, NSObject annotation);
+    }
 
     // @interface MASConfiguration : NSObject
     [BaseType(typeof(NSObject))]
@@ -1340,10 +1340,10 @@ namespace MASFoundation
         [Export("loginWithAuthCredentials:completion:")]
         void LoginWithAuthCredentials(MASAuthCredentials authCredentials, [NullAllowed] MASCompletionErrorBlock completion);
 
-        //// +(void)initializeBrowserBasedAuthenticationWithCompletion:(MASCompletionErrorBlock _Nullable)completion;
-        //[Static]
-        //[Export("initializeBrowserBasedAuthenticationWithCompletion:")]
-        //void InitializeBrowserBasedAuthenticationWithCompletion([NullAllowed] MASCompletionErrorBlock completion);
+        // +(void)initializeBrowserBasedAuthenticationWithCompletion:(MASCompletionErrorBlock _Nullable)completion;
+        [Static]
+        [Export("initializeBrowserBasedAuthenticationWithCompletion:")]
+        void InitializeBrowserBasedAuthenticationWithCompletion([NullAllowed] MASCompletionErrorBlock completion);
 
         // -(void)requestUserInfoWithCompletion:(MASUserResponseErrorBlock _Nullable)completion;
         //[Async(ResultTypeName = "MASUserResponseErrorResult")]
@@ -1651,10 +1651,10 @@ namespace MASFoundation
         //[Export("setOTPCredentialsBlock:")]
         //void SetOTPCredentialsBlock([NullAllowed] MASOTPCredentialsBlock oneTimePassword);
 
-        //// +(void)enableBrowserBasedAuthentication:(BOOL)enable;
-        //[Static]
-        //[Export("enableBrowserBasedAuthentication:")]
-        //void EnableBrowserBasedAuthentication(bool enable);
+        // +(void)enableBrowserBasedAuthentication:(BOOL)enable;
+        [Static]
+        [Export("enableBrowserBasedAuthentication:")]
+        void EnableBrowserBasedAuthentication(bool enable);
 
         // +(void)setGatewayMonitor:(MASGatewayMonitorStatusBlock _Nullable)monitor;
         [Static]
