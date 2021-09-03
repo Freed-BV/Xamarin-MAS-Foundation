@@ -1656,6 +1656,11 @@ namespace MASFoundation
         [Export("enableBrowserBasedAuthentication:")]
         void EnableBrowserBasedAuthentication(bool enable);
 
+        // +(void)preferredBrowserBasedAuthenticationConfiguration:(id<MASBrowserBasedAuthenticationConfigurationInterface> _Nonnull)configuration;
+        [Static]
+        [Export("preferredBrowserBasedAuthenticationConfiguration:")]
+        void PreferredBrowserBasedAuthenticationConfiguration(MASBrowserBasedAuthenticationConfigurationInterface configuration);
+        
         // +(void)setGatewayMonitor:(MASGatewayMonitorStatusBlock _Nullable)monitor;
         [Static]
         [Export("setGatewayMonitor:")]
@@ -2069,6 +2074,35 @@ namespace MASFoundation
         bool appendPartWithFileData(NSData data, string name, string fileName, string mimeType);
     }
 
+    // @protocol MASBrowserBasedAuthenticationConfigurationInterface <NSObject>
+    [Protocol, Model]
+	[BaseType(typeof(NSObject))]
+	interface MASBrowserBasedAuthenticationConfigurationInterface
+	{
+	}
+
+    // @interface MASSafariBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+	[BaseType(typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
+	interface MASSafariBrowserBasedAuthenticationConfiguration
+	{
+	}
+
+	// @interface MASWebSessionBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+	[Introduced(PlatformName.MacCatalyst, 13, 0)]
+	[Watch(6,2), NoTV, Mac(10,15), iOS(12,0)]
+	[BaseType(typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
+	[DisableDefaultCtor]
+	interface MASWebSessionBrowserBasedAuthenticationConfiguration
+	{
+		// @property (nonatomic, strong) NSString * _Nonnull callbackURLScheme;
+		[Export ("callbackURLScheme", ArgumentSemantic.Strong)]
+		string CallbackURLScheme { get; set; }
+
+		// -(instancetype _Nonnull)initWithCallbackURLScheme:(NSString * _Nonnull)callbackURLScheme;
+		[Export ("initWithCallbackURLScheme:")]
+		IntPtr Constructor(string callbackURLScheme);
+	}
+    
     //// @protocol MASMultiFactorAuthenticator
     //[Protocol, Model]
     //interface MASMultiFactorAuthenticator

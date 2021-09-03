@@ -1,1 +1,2 @@
 sharpie bind --output=test -framework ./MASFoundation.framework --namespace=MASFoundation --sdk=iphoneos14.4
+sharpie bind -framework ./MASFoundation.framework -sdk iphoneos14.4 -output test -namespace MASFoundation
