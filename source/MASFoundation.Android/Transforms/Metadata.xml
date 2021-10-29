@@ -16,7 +16,15 @@
     <remove-node path="/api/package[@name='sun.util.calendar']"/>
 
 
-    <remove-node path="/api/package[@name='com.ca.mas.core']"/>
+    <!--    <remove-node path="/api/package[@name='com.ca.mas.core']"/>-->
+    <remove-node path="/api/package[@name='com.ca.mas.core']/class[@name='EventDispatcher']"/>
+    <remove-node path="/api/package[@name='com.ca.mas.core']/class[@name='MAGResultReceiver']"/>
+    <remove-node path="/api/package[@name='com.ca.mas.core']/class[@name='MASCallbackFuture']"/>
+    <remove-node path="/api/package[@name='com.ca.mas.core']/interface[@name='MobileSso']"/>
+    <!--    <remove-node path="/api/package[@name='com.ca.mas.core']/interface[@name='MobileSsoConfig']"/>-->
+    <remove-node path="/api/package[@name='com.ca.mas.core']/class[@name='MobileSsoFactory']"/>
+    <remove-node path="/api/package[@name='com.ca.mas.core']/interface[@name='MobileSsoListener']"/>
+    <remove-node path="/api/package[@name='com.ca.mas.core']/interface[@name='ResponseInterceptor']"/>
 
     <!--    
     <remove-node path="/api/package[@name='com.ca.mas.core.auth']" />
