@@ -2086,6 +2086,12 @@ namespace MASFoundation
 	interface MASSafariBrowserBasedAuthenticationConfiguration
 	{
 	}
+	
+    // @interface MASExternalBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+    [BaseType (typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
+    interface MASExternalBrowserBasedAuthenticationConfiguration
+    {
+    }
 
 	// @interface MASWebSessionBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
 	[Introduced(PlatformName.MacCatalyst, 13, 0)]

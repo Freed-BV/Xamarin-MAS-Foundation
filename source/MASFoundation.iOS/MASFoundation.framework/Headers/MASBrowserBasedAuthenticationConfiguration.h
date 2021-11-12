@@ -24,6 +24,14 @@
 @end
 
 
+/**
+ MASExternalBrowserBasedAuthenticationConfiguration class is used to redirect to the safari browser outside of the app
+ */
+@interface MASExternalBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+
+@end
+
+
 
 
 API_AVAILABLE(ios(12.0), macCatalyst(13.0), macos(10.15), watchos(6.2)) API_UNAVAILABLE(tvos)
