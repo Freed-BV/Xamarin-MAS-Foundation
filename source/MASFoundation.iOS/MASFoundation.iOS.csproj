@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
+    <NoBindingEmbedding>true</NoBindingEmbedding>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DBB0B1DC-6E45-4C48-92A6-249B13AB60CB}</ProjectGuid>
@@ -36,9 +37,15 @@
           <type>AfterBuild</type>
           <command>mdoc export-msxdoc --out bin/Release/MASFoundation.iOS.xml docs</command>
         </Command>
-      </CustomCommands>
+      </CustomCommands>/Users/albert/Projects/Github/urbanairship-xamarin/build.gradle
+      /Users/albert/Projects/Github/urbanairship-xamarin/frameworks/AirshipCore.xcframework/Info.plist
     </CustomCommands>
   </PropertyGroup>
+  <ItemGroup>
+      <None Include="masfoundation.ios.targets">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+  </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="Xamarin.iOS" />
@@ -57,7 +64,7 @@
     <BundleResource Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <NativeReference Include="MASFoundation.framework">
+    <NativeReference Include=".\MASFoundation.xcframework">
       <Kind>Framework</Kind>
       <SmartLink>False</SmartLink>
     </NativeReference>
