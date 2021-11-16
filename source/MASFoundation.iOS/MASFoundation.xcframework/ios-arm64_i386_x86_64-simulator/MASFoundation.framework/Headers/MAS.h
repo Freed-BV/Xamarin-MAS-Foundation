@@ -17,6 +17,7 @@
 #import "MASMultiPartFormData.h"
 #import "MASBrowserBasedAuthenticationConfiguration.h"
 
+
 /**
  * The top level MAS object represents the Mobile App Services SDK in it's entirety.  It
  * is where the framework lifecycle begins, and ends if necessary.  It is the front 
@@ -155,6 +156,46 @@
  *  @return BOOL value of indicating whether PKCE is enabled or not.
  */
 + (BOOL)isPKCEEnabled;
+
+
+
+/**
+*  Sets BOOL indicator of  enforcing SSL Pinning i.e. Evaluate Server Trust with pinned Server Certificates.
+*  By default, SSL Pinning is enabled.
+*
+*  @param enable BOOL value of indicating whether SSL Pinning should be enabled or not.
+*/
++ (void)setSSLPinningEnabled:(BOOL)enable;
+
+
+
+/**
+*  Gets BOOL indicator of SSL Pinning enabled or not for Server Trust evluation of pinned Server Certificates.
+*  By default, SSL Pinning is enabled.
+*
+*  @return BOOL value of indicating whether SSL Pinning is enabled or not.
+*/
++ (BOOL)isSSLPinningEnabled;
+
+
+
+/**
+*  Sets BOOL indicator for skipping the reset of refresh_token upon unknown errors during token renewal.
+*  By default, skipping the reset of refresh_token is disabled.
+*
+*  @param skipToken BOOL value of indicating whether  skipping the reset of refresh_token should be enabled or not.
+*/
++ (void)setDonotLogoutTokenRenewalOnServerErrors:(BOOL)skipToken;
+
+
+
+/**
+*  Gets BOOL indicator for skipping the reset of refresh_token upon unknown errors during token renewal.
+*  By default, skipping the reset of refresh_token is disabled.
+*
+*  @return BOOL value of indicating whether  skipping the reset of refresh_token should be enabled or not.
+*/
++ (BOOL)isDonotLogoutTokenRenewalOnServerErrors;
 
 
 

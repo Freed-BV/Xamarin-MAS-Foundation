@@ -1,10 +1,13 @@
 //
-//  MASBrowserBasedAuthenticationConfigurationInterface.h
+//  MASBrowserBasedAuthenticationConfiguration.h
 //  MASFoundation
 //
-//  Created by sander saelmans on 21/12/2020.
-//  Copyright © 2020 CA Technologies. All rights reserved.
+//  Copyright (c) 2020 CA. All rights reserved.
 //
+//  This software may be modified and distributed under the terms
+//  of the MIT license. See the LICENSE file for details.
+//
+
 
 #import <Foundation/Foundation.h>
 
@@ -17,17 +20,18 @@
 
 
 /**
- MASSafariBrowserBasedAuthenticationConfiguration class is used to present a SFSafariViewController browser based login
+ MASSafariBrowserAppBasedAuthenticationConfiguration class is used to present a external safari browser app based login
  */
-@interface MASSafariBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+@interface MASSafariBrowserAppBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
 
 @end
 
 
+
 /**
- MASExternalBrowserBasedAuthenticationConfiguration class is used to redirect to the safari browser outside of the app
+ MASSafariBrowserBasedAuthenticationConfiguration class is used to present a SFSafariViewController browser based login
  */
-@interface MASExternalBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+@interface MASSafariBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
 
 @end
 

@@ -2081,15 +2081,15 @@ namespace MASFoundation
 	{
 	}
 
-    // @interface MASSafariBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
-	[BaseType(typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
-	interface MASSafariBrowserBasedAuthenticationConfiguration
-	{
-	}
-	
-    // @interface MASExternalBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+    // @interface MASSafariBrowserAppBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
     [BaseType (typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
-    interface MASExternalBrowserBasedAuthenticationConfiguration
+    interface MASSafariBrowserAppBasedAuthenticationConfiguration
+    {
+    }
+
+    // @interface MASSafariBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+    [BaseType (typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
+    interface MASSafariBrowserBasedAuthenticationConfiguration
     {
     }
 
