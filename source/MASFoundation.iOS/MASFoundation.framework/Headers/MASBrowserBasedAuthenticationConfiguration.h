@@ -8,7 +8,6 @@
 //  of the MIT license. See the LICENSE file for details.
 //
 
-
 #import <Foundation/Foundation.h>
 
 /**
@@ -17,14 +16,6 @@
 @protocol MASBrowserBasedAuthenticationConfigurationInterface <NSObject>
 @end
 
-
-
-/**
- MASSafariBrowserAppBasedAuthenticationConfiguration class is used to present a external safari browser app based login
- */
-@interface MASSafariBrowserAppBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
-
-@end
 
 
 
