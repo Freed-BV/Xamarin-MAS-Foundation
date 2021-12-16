@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>MASFoundation.iOS</id>
+    <version>2.1.0.20</version>
+    <title>MASFoundation.iOS</title>
+    <authors>Albert Bosma</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Created this sepcific Xamarin.iOS package for the MASFoundation, so we could bind the xcframework.</description>
+    <dependencies>
+      <group targetFramework="Xamarin.iOS1.0" />
+    </dependencies>
+  </metadata>
+
+  <files>
+    <file src="./bin/release/MASFoundation.iOS.dll" target="lib/Xamarin.iOS10" />
+    <file src="./bin/Release/MASFoundation.iOS.resources/**" target="content/MASFoundation.iOS.resources" />
+    <file src="./masfoundation.ios.targets" target="build/masfoundation.ios.targets" />
+  </files>
+</package>

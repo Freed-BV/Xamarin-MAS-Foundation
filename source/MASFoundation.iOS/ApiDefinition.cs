@@ -1656,11 +1656,6 @@ namespace MASFoundation
         [Export("enableBrowserBasedAuthentication:")]
         void EnableBrowserBasedAuthentication(bool enable);
 
-        // +(void)enableSystemNativeBrowserBasedAuthentication:(BOOL)enable;
-        [Static]
-        [Export ("enableSystemNativeBrowserBasedAuthentication:")]
-        void EnableSystemNativeBrowserBasedAuthentication(bool enable);
-        
         // +(void)preferredBrowserBasedAuthenticationConfiguration:(id<MASBrowserBasedAuthenticationConfigurationInterface> _Nonnull)configuration;
         [Static]
         [Export("preferredBrowserBasedAuthenticationConfiguration:")]
@@ -2089,6 +2084,12 @@ namespace MASFoundation
     // @interface MASSafariBrowserBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
     [BaseType (typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
     interface MASSafariBrowserBasedAuthenticationConfiguration
+    {
+    }
+    
+    // @interface MASSafariBrowserAppBasedAuthenticationConfiguration : NSObject <MASBrowserBasedAuthenticationConfigurationInterface>
+    [BaseType (typeof(MASBrowserBasedAuthenticationConfigurationInterface))]
+    interface MASSafariBrowserAppBasedAuthenticationConfiguration
     {
     }
 
